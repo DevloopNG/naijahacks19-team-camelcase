@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cc.properton">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".PayStackPaymentActivity"/>
+        <activity android:name=".PaymentActivity"></activity>
+        <activity android:name=".PayStackPaymentActivity" />
         <activity android:name=".StartupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,8 +33,7 @@
 
         <meta-data
             android:name="co.paystack.android.PublicKey"
-            android:value="@string/payStack_test_public_key"/>
-
+            android:value="@string/payStack_test_public_key" />
     </application>
 
 </manifest>
