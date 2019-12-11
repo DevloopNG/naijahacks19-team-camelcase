@@ -5,6 +5,7 @@
     android:layout_height="wrap_content">
 
     <ImageButton
+        android:id="@+id/btnPayStack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/paystack_button"
