@@ -1,30 +1,26 @@
-package cc.properton.ui.settings
+package cc.properton.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProviders
 import cc.properton.R
+import cc.properton.adapters.PortfolioAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.layout_portfolio.*
 
-class SettingsFragment : Fragment() {
-
-    private lateinit var notificationsViewModel: SettingsViewModel
-
+class PortfolioFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-            ViewModelProviders.of(this).get(SettingsViewModel::class.java)
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        return inflater.inflate(R.layout.layout_portfolio, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        activity!!.toolbar_title.text = "Settings"
+        portfolio_rv.adapter = PortfolioAdapter(context!!)
     }
 }

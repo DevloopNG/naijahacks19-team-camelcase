@@ -137,7 +137,7 @@ class OnboardingActivity : AppCompatActivity() {
         }
 
     private fun launchHomeScreen() {
-        startActivity(Intent(this@OnboardingActivity, HomeActivity::class.java))
+        startActivity(Intent(this@OnboardingActivity, MainActivity::class.java))
         finish()
     }
 

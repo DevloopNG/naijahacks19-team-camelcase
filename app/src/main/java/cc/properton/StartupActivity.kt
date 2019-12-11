@@ -14,7 +14,7 @@ class StartupActivity : AppCompatActivity() {
         if (prefManager.isFirstLaunch) {
             startActivity(Intent(this@StartupActivity, OnboardingActivity::class.java))
         } else {
-            startActivity(Intent(this@StartupActivity, HomeActivity::class.java))
+            startActivity(Intent(this@StartupActivity, MainActivity::class.java))
         }
         finish()
     }

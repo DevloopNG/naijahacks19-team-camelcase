@@ -1,6 +1,7 @@
 package cc.properton
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -11,16 +12,16 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import cc.properton.utils.PrefManager
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_main.*
 
-class HomeActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var prefManager: PrefManager
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home)
+        setContentView(R.layout.activity_main)
         prefManager = PrefManager(this)
         prefManager.isFirstLaunch = false
 
@@ -49,7 +50,9 @@ class HomeActivity : AppCompatActivity() {
         setSupportActionBar(home_toolbar)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-
+        home_notification.setOnClickListener {
+            startActivity(Intent(this, NotificationActivity::class.java))
+        }
 //        logout_btn.setOnClickListener {
 //            AuthUI.getInstance().signOut(this)
 //            startActivity(Intent(this, MainActivity::class.java))

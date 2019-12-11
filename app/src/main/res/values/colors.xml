@@ -3,8 +3,19 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#FF7F00</color>
+    <color name="blueGrey">#6699CC</color>
     <color name="dot_active">#D81B60</color>
     <color name="dot_inactive">#A8A4A4</color>
     <color name="textWhite">#f5f5f5</color>
+    <color name="iconicWhite">#f0f0f0</color>
+    
+    <color name="lightBlack">#464646</color>
+    <color name="light_card_background">#FFFFFFFF</color>
+    <color name="chat_read_bg">#BBDEFB</color>
+    <color name="quantum_red">#db4437</color>
+    <color name="grey">#dddddd</color>
+    <color name="pure_white">#ffffff</color>
 </resources>

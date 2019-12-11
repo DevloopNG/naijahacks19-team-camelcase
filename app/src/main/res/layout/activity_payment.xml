@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:background="@color/blueGrey"
+    style="@style/Widget.AppCompat.Toolbar"
+    android:layout_weight="0.09">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/ic_keyboard_arrow_left_black_24dp"
+        android:layout_marginLeft="4dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:gravity="center|center_vertical"
+            android:text="MAKE PAYMENT"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+</LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.9"
+            android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Choose Payment Type"
+                    android:textSize="18dp"
+                    android:padding="8dp"
+                    android:background="@color/orange"
+                    android:fontFamily="sans-serif-medium"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp"
+                android:gravity="center">
+
+                <Button
+                    android:background="@color/fui_bgPhone"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:text="Direct Bank Payment"/>
+
+                <Button
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:layout_margin="4dp"
+                    android:text="Wire Transfer"
+                    android:background="@color/fui_bgTwitter"/>
+
+                <Button
+                    android:background="@color/fui_bgGitHub"
+                    android:layout_width="120dp"
+                    android:layout_height="70dp"
+                    android:textColor="@color/white"
+                    android:layout_margin="4dp"
+                    android:text="VIA NHS"/>
+
+            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="8dp">
+
+                    <include
+                        android:layout_marginTop="15dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        layout="@layout/paystack_layout"/>
+
+                </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
