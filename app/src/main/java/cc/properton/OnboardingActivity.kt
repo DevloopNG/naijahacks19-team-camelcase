@@ -88,7 +88,11 @@ class OnboardingActivity : AppCompatActivity() {
         layoutDots!!.removeAllViews()
         for (i in dots.indices) {
             dots[i] = TextView(this)
-            dots[i]?.text = Html.fromHtml("&#8226;")
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
+                dots[i]?.text = Html.fromHtml("&#8226;", Html.FROM_HTML_MODE_LEGACY)
+            } else {
+                dots[i]?.text = Html.fromHtml("&#8226;")
+            }
             dots[i]?.textSize = 30f
             dots[i]?.setTextColor(colorInactive)
             layoutDots!!.addView(dots[i])
