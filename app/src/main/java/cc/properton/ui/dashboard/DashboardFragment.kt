@@ -28,7 +28,7 @@ class DashboardFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         activity!!.toolbar_title.text = "Dashboard"
         childFragmentManager.beginTransaction()
-            .add(InnerDashboardFragment(), "Dashboard").commit()
+            .add(R.id.dashboard_container,InnerDashboardFragment(), "Dashboard").commit()
 
         tab_dashboard.setOnClickListener {
             switchSearchTab(it)

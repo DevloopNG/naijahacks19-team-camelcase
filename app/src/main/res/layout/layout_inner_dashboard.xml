@@ -8,7 +8,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="120dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp">
@@ -16,6 +16,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:baselineAligned="false"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -23,8 +24,15 @@
                 android:layout_height="match_parent"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1.3"
-                android:gravity="center_vertical"
                 android:orientation="vertical">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:tint="@color/blueGrey"
+                    android:src="@drawable/ic_account_balance_wallet_black_24dp"
+                    android:contentDescription="wallet image" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -55,23 +63,23 @@
                     android:layout_height="30dp"
                     android:background="@drawable/dashboard_tab_inactive"
                     android:gravity="center"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
                     android:text="Top Up Wallet"
-                    android:textSize="10sp"
+                    android:textSize="12sp"
                     tools:ignore="SmallSp" />
 
                 <Button
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="8dp"
                     android:background="@drawable/dashboard_tab_inactive"
                     android:gravity="center"
-                    android:paddingStart="5dp"
-                    android:paddingEnd="5dp"
-                    android:text="TextView"
-                    android:textSize="10sp"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="Withdraw"
+                    android:textSize="12sp"
                     tools:ignore="SmallSp" />
             </LinearLayout>
         </LinearLayout>
@@ -88,7 +96,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
             app:cardElevation="4dp"
@@ -104,7 +112,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Current Investment" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -118,7 +126,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
             app:contentPadding="4dp">
@@ -156,7 +164,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_marginEnd="4dp"
             android:layout_weight="1"
             app:contentPadding="4dp">
@@ -177,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-black"
-                    android:text="TextView"
+                    android:text="NGN 500.000"
                     android:textSize="13sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -185,7 +193,7 @@
 
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="80dp"
             android:layout_marginStart="4dp"
             android:layout_weight="1"
             app:contentPadding="4dp">
