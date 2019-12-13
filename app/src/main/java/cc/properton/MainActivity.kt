@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
+
         if (currentUser != null) {
             Log.i("current_user_name", "Currently Signed in as:\n${currentUser.displayName}")
 
@@ -54,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         setSupportActionBar(home_toolbar)
 
         navView.setupWithNavController(navController)
+
         home_profile.setOnClickListener {
             val popupMenu = PopupMenu(this@MainActivity, it)
             popupMenu.inflate(R.menu.profile_popup)
@@ -72,6 +74,7 @@ class MainActivity : AppCompatActivity() {
             }
             popupMenu.show()
         }
+
         home_notification.setOnClickListener {
             startActivity(Intent(this, NotificationActivity::class.java))
         }

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<LinearLayout
+        <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="0dp"
     android:background="@color/blueGrey"
@@ -43,9 +43,7 @@
             android:layout_height="0dp"
             android:layout_weight="0.9"
             android:orientation="vertical">
-
-
-                <TextView
+            <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Choose Payment Type"
@@ -57,6 +55,7 @@
                     android:layout_marginTop="15dp"/>
 
             <LinearLayout
+                android:id="@+id/paymentButtons"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -64,43 +63,84 @@
                 android:gravity="center">
 
                 <Button
+                    android:id="@+id/btnDirectBankPayment"
                     android:background="@color/fui_bgPhone"
                     android:layout_width="120dp"
                     android:layout_height="70dp"
                     android:layout_margin="4dp"
+                    android:onClick="switchSearchTab"
                     android:text="Direct Bank Payment"/>
 
                 <Button
+                    android:id="@+id/btnWireTransfer"
                     android:layout_width="120dp"
                     android:layout_height="70dp"
                     android:layout_margin="4dp"
                     android:text="Wire Transfer"
+                    android:onClick="switchSearchTab"
                     android:background="@color/fui_bgTwitter"/>
 
                 <Button
+                    android:id="@+id/btnNHS"
                     android:background="@color/fui_bgGitHub"
                     android:layout_width="120dp"
                     android:layout_height="70dp"
                     android:textColor="@color/white"
                     android:layout_margin="4dp"
+                    android:onClick="switchSearchTab"
                     android:text="VIA NHS"/>
 
             </LinearLayout>
 
-                <LinearLayout
+
+
+            <LinearLayout
+                android:id="@+id/layoutDirectPayment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp">
+
+                <include
+                    android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp">
+                    android:gravity="center"
+                    layout="@layout/direct_bank_payment"/>
 
-                    <include
-                        android:layout_marginTop="15dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center"
-                        layout="@layout/paystack_layout"/>
 
                 </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/layoutWireTransfer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <include
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    layout="@layout/paystack_layout"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutNHS"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:visibility="gone">
+
+                <include
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    layout="@layout/layout_nhs_payment"/>
+
+            </LinearLayout>
 
         </LinearLayout>
 

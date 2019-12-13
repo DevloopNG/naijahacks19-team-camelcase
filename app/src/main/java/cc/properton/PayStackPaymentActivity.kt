@@ -25,7 +25,7 @@ class PayStackPaymentActivity : AppCompatActivity() {
 
     lateinit var dialog: ProgressDialog
     lateinit var transaction: Transaction
-    lateinit var charge: Charge
+    private lateinit var charge: Charge
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -237,8 +237,10 @@ class PayStackPaymentActivity : AppCompatActivity() {
         override fun onPostExecute(result: String?) {
             super.onPostExecute(result)
             if (result != null) {
-                charge.accessCode = result
-                chargeCard()
+                if(::charge.isInitialized) {
+                    charge.accessCode = result
+                    chargeCard()
+                }
             } else {
                 this@PayStackPaymentActivity.textview_backend_message.text = String.format(
                     "There was a problem getting a new access code form the backend: %s",
