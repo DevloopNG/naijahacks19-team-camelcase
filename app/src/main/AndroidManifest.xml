@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="cc.properton">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,19 +14,32 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".StartupActivity">
+        <activity android:name=".PaymentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".PayStackPaymentActivity" >
+
+        </activity>
+        <activity android:name=".StartupActivity">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_home" />
         <activity android:name=".RegistrationActivity" />
-        <activity android:name=".NotificationActivity"/>
+        <activity android:name=".NotificationActivity" />
         <activity android:name=".AuthenticationActivity" />
         <activity android:name=".OnboardingActivity" />
+
+        <meta-data
+            android:name="co.paystack.android.PublicKey"
+            android:value="@string/payStack_test_public_key" />
+
+        <activity android:name=".DetailsActivity" />
     </application>
+
 </manifest>

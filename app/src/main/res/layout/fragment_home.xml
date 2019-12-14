@@ -11,16 +11,50 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/properties_rv"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="4dp"/>
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        style="?android:attr/buttonBarStyle"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="30dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/dashboard_tab_inactive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/include2"
-        tools:listitem="@layout/item_property" />
+        app:layout_constraintTop_toBottomOf="@id/include2">
+
+        <Button
+            android:id="@+id/tab_co_owning"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="2dp"
+            android:layout_weight="1"
+            android:background="@drawable/dashboard_tab_active"
+            android:text="Co-Owning"
+            android:textColor="@color/pure_white"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/tab_investments"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:text="Investments"
+            android:textColor="#464646"
+            android:textSize="12sp" />
+    </LinearLayout>
+<FrameLayout
+    android:id="@+id/home_container"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

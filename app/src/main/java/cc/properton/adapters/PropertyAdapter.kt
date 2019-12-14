@@ -1,10 +1,12 @@
 package cc.properton.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import cc.properton.DetailsActivity
 import cc.properton.R
 import kotlinx.android.synthetic.main.item_property.view.*
 
@@ -18,6 +20,9 @@ class PropertyAdapter(private val context: Context) :
             iv.item_property_title.text = "2 wing duplex"
             iv.item_property_location.text = "Ajah, Lagos"
             iv.item_property_image.setImageResource(R.drawable.ic_account_circle_black_24dp)
+            iv.setOnClickListener {
+                context.startActivity(Intent(context, DetailsActivity::class.java))
+            }
         }
     }
 

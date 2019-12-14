@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Properton</string>
+    <string name="payStack_test_secret_key">sk_test_d122c8d5c184c10c1342924410d35fc82f0309e3</string>
+    <string name="payStack_test_public_key">pk_test_061ff19f75133482deb7560e8c38e16e108d6bd3</string>
+
     <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Home</string>
     <string name="title_opportunities">Opportunities</string>
