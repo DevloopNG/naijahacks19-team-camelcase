@@ -122,6 +122,7 @@
                     android:layout_below="@id/edit_expiry_year"
                     android:layout_centerHorizontal="true"
                     android:padding="8dp"
+                    android:background="@color/orange"
                     android:text="Charge card (init from server)"/>
                 <Button
                     android:id="@+id/button_perform_local_transaction"
@@ -130,6 +131,7 @@
                     android:layout_below="@id/button_perform_transaction"
                     android:layout_centerHorizontal="true"
                     android:padding="8dp"
+                    android:background="@color/orange"
                     android:text="Charge card (init from app)"/>
             </RelativeLayout>
 

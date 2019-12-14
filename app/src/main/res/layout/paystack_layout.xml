@@ -2,14 +2,210 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="match_parent">
 
-    <ImageButton
+    <!--<ImageButton
         android:id="@+id/btnPayStack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/paystack_button"
         android:layout_gravity="center"
-        android:background="@color/orange"/>
+        android:background="@color/orange"/>-->
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appBar"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/layout_custom_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:gravity="center_vertical"
+                android:minHeight="150dp">
+
+                <LinearLayout
+                    android:id="@+id/layout_card_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <EditText
+                        android:id="@+id/edit_card_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Card Number"
+                        android:inputType="number"
+                        android:padding="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/edit_text_background"
+                        android:minEms="8"
+                        android:text=""
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginTop="10dp">
+
+                        <EditText
+                            android:id="@+id/edit_expiry_month"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_toLeftOf="@id/divider_horizontal"
+                            android:gravity="left"
+                            android:hint="MM"
+                            android:inputType="number"
+                            android:maxEms="3"
+                            android:maxLength="2"
+                            android:text=""
+                            android:padding="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_toStartOf="@id/divider_horizontal"
+                            android:background="@drawable/edit_text_background"/>
+
+                        <EditText
+                            android:id="@+id/edit_expiry_year"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_toRightOf="@id/divider_horizontal"
+                            android:gravity="left"
+                            android:hint="YYYY"
+                            android:inputType="number"
+                            android:maxEms="4"
+                            android:maxLength="4"
+                            android:text=""
+                            android:padding="10dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_toEndOf="@id/divider_horizontal"
+                            android:background="@drawable/edit_text_background"/>
+
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/edit_cvc"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:hint="CVV"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:minEms="4"
+                        android:text=""
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:padding="10dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_background"/>
+
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/button_perform_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/layout_card_num"
+                    android:layout_centerHorizontal="true"
+                    android:padding="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/button_background"
+                    android:text="Charge card"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/iconicWhite"/>
+
+                <Button
+                    android:id="@+id/button_perform_local_transaction"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/button_perform_transaction"
+                    android:layout_centerHorizontal="true"
+                    android:padding="8dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:drawableLeft="@drawable/ic_shopping_cart_black_24dp"
+                    android:background="@drawable/button_background"
+                    android:text="Charge card"
+                    android:textColor="@color/iconicWhite"
+                    android:visibility="gone"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_transaction_response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_custom_form"
+                android:background="#1C3A4B"
+                android:gravity="center_vertical"
+                android:minHeight="70dp"
+                android:layout_marginTop="30dp">
+
+                <TextView
+                    android:id="@+id/textview_reference"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:padding="8dp"
+                    android:text="No Transaction Yet"
+                    android:textColor="#ffffff"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/layout_token_response"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layout_transaction_response"
+                android:background="#1C3A4B"
+                android:gravity="center_vertical"
+                android:minHeight="70dp"
+                >
+
+                <TextView
+                    android:id="@+id/textView_error"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_horizontal_margin"
+                    android:padding="8dp"
+                    android:text=" "
+                    android:textColor="#ffffff"/>
+
+                <TextView
+                    android:id="@+id/textview_backend_message"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textView_error"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:padding="8dp"
+                    android:text=" "
+                    android:textColor="#ffffff"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>

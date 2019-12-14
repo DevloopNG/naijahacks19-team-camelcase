@@ -92,8 +92,6 @@
 
             </LinearLayout>
 
-
-
             <LinearLayout
                 android:id="@+id/layoutDirectPayment"
                 android:layout_width="match_parent"
